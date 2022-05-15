@@ -31,8 +31,6 @@ Our dataset was originally part of a competition to achive best in class perform
 ```
 Grocery_ImplicitRecSystems/
 ├─ Data /
-│  ├─ order_products__prior.csv (training order set)
-│  ├─ order_products__train.csv (validation order set)
 │  ├─ np_instacart_product_vectors.pkl (word2vec vectors)
 │  ├─ products.csv (product information set)
 ├─ Images/
