@@ -22,7 +22,7 @@ Our dataset was originally part of a competition to achive best in class perform
 * 16.59 Orders/User
 \
 \
-|<img src="https://github.com/drghoshi/Grocery_ImplicitRecSystems/blob/main/Images/orders_snapshot.png">|
+|!<img src="https://github.com/drghoshi/Grocery_ImplicitRecSystems/blob/main/Images/orders_snapshot.png">|
 |:--:|
 |*A snapshot of the orders dataset. Above you can see the first two orders for user_id 1*|
 
