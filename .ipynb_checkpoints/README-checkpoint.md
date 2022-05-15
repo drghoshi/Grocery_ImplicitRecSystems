@@ -14,7 +14,7 @@ Given how diverse and specific eating habits have become over the past few decad
 
 # Data
 
-<img src="https://github.com/farris/GeoLifeCLEF-2022/blob/master/images/rgb_show.png" width="400" height="400">
+<img src="https://github.com/drghoshi/Grocery_ImplicitRecSystems/blob/main/Images/orders_snapshot.png">
 
 # File Structure & Guide
 
