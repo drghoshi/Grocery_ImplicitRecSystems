@@ -14,7 +14,7 @@ Given how diverse and specific eating habits have become over the past few decad
 
 # Data
 
-As mentioned above, our dataset was originally part of a competition to achive the best in class performance on classifying re-order. In other words, given a users past purchased products, the goal is to identify if that user will buy those products again in their subsequent order. Our application is slightly different in that we want to not only predict which items are reorders, but also identify new products that the user will buy in their next order. Following are some quick statistics about the orders dataset:
+Our dataset was originally part of a competition to achive best in class performance on classifying re-order. In other words, given a users past purchased products, the goal is to identify if that user will buy those products again in their subsequent order. Our application is slightly different in that we want to not only predict which items are reorders, but also identify new products that the user will buy in their next order. Following are some quick statistics about the orders dataset:
 * 206209 Customers
 * 49688 Products
 * 34569106 Orders
@@ -22,7 +22,8 @@ As mentioned above, our dataset was originally part of a competition to achive t
 * 16.59 Orders/User
 
 
-<img src="https://github.com/drghoshi/Grocery_ImplicitRecSystems/blob/main/Images/orders_snapshot.png">
+!<img src="https://github.com/drghoshi/Grocery_ImplicitRecSystems/blob/main/Images/orders_snapshot.png">
+*A snapshot of the orders dataset. Above you can see the first two orders for user_id 1*
 
 # File Structure & Guide
 
