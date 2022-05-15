@@ -36,7 +36,9 @@ One of the main difficulties of employing an implicit-based recommendation model
 notion of a negative. If there are no historical interactions between a user and product, we’re unable to confirm that
 the user did not like the product, since they may not have even known it existed. This makes the challenge of
 predicting the propensity of a user buying a particular product extremely difficult, since we can only know what a
-user likes. To deal with this issue, there are a number of methods one can employ to make sure the negative samples
+user likes. 
+
+To deal with this issue, there are a number of methods one can employ to make sure the negative samples
 drawn from the data distribution are more indicative of what a user may not have truly enjoyed. A series of
 techniques, called heuristic-based negative sampling methods, involve either randomly sampling from the entire
 product distribution, or popularity-based sampling, allowing top-selling products to have a higher probability of
@@ -48,7 +50,14 @@ score high but are never purchased by the user. These products generally fall in
 bought in the past, but are never purchased, indicating a negative relationship the model should learn to differentiate
 from the specific products the user enjoys.
 
-We decided to try 3 techniques to deal with this lack of true negative samples. All three techniques are predicated on going from a singluar traditional Matrix Factorization model to a two-stage model. The first stage, an ALS Matrix Factorization approach, identifies a much smaller candidate set for each user while the more complex second model, a complexfeed-forward neural network, ranks these 100 products for final evaluation. In addition to modifying our approach to a two-stage model, we also tried using popularity-based negative sampling and hard-negative sampling using our word2vec embeddings.
+We decided to try 3 techniques to deal with this lack of true negative samples. All three techniques are predicated on going from a singluar traditional Matrix Factorization model to a two-stage model. The first stage, an ALS Matrix Factorization approach, identifies a much smaller candidate set for each user while the more complex second model, a complexfeed-forward neural network, ranks these 100 products for final evaluation. In addition to modifying our approach to a two-stage model, we also tried using popularity-based negative sampling and hard-negative sampling using our word2vec content embeddings. Below you can see the model architecture that was employed for our 2nd stage model.
+
+| ![orders_snapshot.png](https://github.com/drghoshi/Grocery_ImplicitRecSystems/blob/main/Images/orders_snapshot.png) | 
+|:--:| 
+| *A snapshot of the orders dataset. Above you can see the first two orders for user_id 1.* |
+
+
+Our word2vec embeddings were custom built using the descriptions and labels tied to each product in the inventory.
 
 # Evaluation
 
