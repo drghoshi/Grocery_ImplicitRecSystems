@@ -42,7 +42,9 @@ To deal with this issue, there are a number of methods one can employ to make su
 drawn from the data distribution are more indicative of what a user may not have truly enjoyed. A series of
 techniques, called heuristic-based negative sampling methods, involve either randomly sampling from the entire
 product distribution, or popularity-based sampling, allowing top-selling products to have a higher probability of
-being selected than less-popular products. These methods work, but they can be problematic due to the potential of
+being selected than less-popular products. 
+
+These methods work, but they can be problematic due to the potential of
 picking very niche products with no history or picking items that are popular in a global sense and fail to pick up on
 various personas of shoppers. The other set of techniques, called model-based negative sampling methods, involve
 using machine learning models to predict the propensity of a user purchasing an item, and including items which
@@ -50,16 +52,16 @@ score high but are never purchased by the user. These products generally fall in
 bought in the past, but are never purchased, indicating a negative relationship the model should learn to differentiate
 from the specific products the user enjoys.
 
-We decided to try 3 techniques to deal with this lack of true negative samples. All three techniques are predicated on going from a singluar traditional Matrix Factorization model to a two-stage model. The first stage, an ALS Matrix Factorization approach, identifies a much smaller candidate set for each user while the more complex second model, a complexfeed-forward neural network, ranks these 100 products for final evaluation. In addition to modifying our approach to a two-stage model, we also tried using popularity-based negative sampling and hard-negative sampling using our word2vec content embeddings. Below you can see the model architecture that was employed for our 2nd stage model.
+We decided to try 3 techniques to deal with this lack of true negative samples. All three techniques are predicated on going from a singluar traditional Matrix Factorization model to a two-stage model. The first stage, an ALS Matrix Factorization approach, identifies a much smaller candidate set for each user while the more complex second model, a complexfeed-forward neural network, ranks these 100 products for final evaluation. In addition to modifying our approach to a two-stage model, we also tried using popularity-based negative sampling and hard-negative sampling using our word2vec content embeddings. Below you can see the model architecture that was employed for our 2nd stage model. Our word2vec embeddings were custom built using the descriptions and labels tied to each product in the inventory.
 
-| ![orders_snapshot.png](https://github.com/drghoshi/Grocery_ImplicitRecSystems/blob/main/Images/orders_snapshot.png) | 
+
+| ![ncf_architecture.jpg](https://github.com/drghoshi/Grocery_ImplicitRecSystems/blob/main/Images/ncf_architecture.jpg) | 
 |:--:| 
-| *A snapshot of the orders dataset. Above you can see the first two orders for user_id 1.* |
+| *The architecture we used for our 2nd stage ranking model. The architecture is based on the Generalized Neural Matrix Factorization model, and is modified by adding our word2vec embeddings to the feed-forward network on the right hand side.* |
 
 
-Our word2vec embeddings were custom built using the descriptions and labels tied to each product in the inventory.
 
 # Evaluation
 
-
+The first test we decided to do was on our hard-negative sampling approach. In this approach we identified positive interactions between user and product, and employed our embedding space to select the n-nearest neighbors and classify them as negatives. In this sense, the model is learning specifically what products a user likes.
 
